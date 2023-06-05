@@ -1,0 +1,12 @@
+{% extends "index.html" %}
+{% load static %}
+{% block content %}
+<div class="container">
+    {% for i in data %}
+    <img src="{{i.plant_image.url}}" style="width:500px; height:300px; margin-top: 30px;"/>
+    <h5 style="margin-top: 20px;">{{i.plantname}}</h5>
+    <p>{{i.description}}</p>
+    {% endfor %}
+</div>
+
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "index.html" %}
+{% load static %}
+{% block content %}
+<div id="form">
+    <form method="POST" action="{% url 'getlogin' %}">
+        {% csrf_token %}
+        <label for="email" class="form-label">Email</label><br>
+        <input type="email" name="email" class="form-control"><br>
+        <label for="password" class="form-label" >Password</label><br>
+        <input type="password" name="password" class="form-control"><br><br>
+        <button class="btn btn-success">Login</button>
+    </form>
+    <p>{{msg}}</p>
+</div>
+{% endblock %}

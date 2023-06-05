@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% for i in data %}
+    <form method="post" action="{% url 'update' did=i.id %}">
+        {% csrf_token %}
+        <label for="name"> Name</label>
+        <input type="text" name="name" id="name" placeholder="enter name" value="{{i.name}}"><br><br>
+        <label for="email"> Email</label>
+        <input type="email" name="email" id="email" placeholder="enter email" value="{{i.email}}"><br><br>
+        <label for="phn"> Phone Number</label>
+        <input type="number" name="phn" id="phn" placeholder="enter phone number" value="{{i.phn}}"><br><br>
+        <label for="address"> Address</label>
+        <textarea id="address" name="address" row="100"></textarea>{{i.address}}<br><br>
+        <label for="password"> Password</label>
+        <input type="password" name="password" id="password" placeholder="enter password"><br><br>
+
+        <button>Submit</button>
+    </form>
+    {% endfor %}
+</body>
+</html>
